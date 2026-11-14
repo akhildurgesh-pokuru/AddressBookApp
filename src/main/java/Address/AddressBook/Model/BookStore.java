@@ -7,24 +7,25 @@ public class BookStore {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @Column(name = "book_name")
-    String book_name;
+    private String book_name;
 
     @Column(name = "author")
-    String author;
+    private String author;
 
     @Column(name = "price")
-    double price;
+    private double price;
 
-    public BookStore(Long id, String book_name, String author, double price) {
-        this.id = id;
+    // Parameterized constructor
+    public BookStore(String book_name, String author, double price) {
         this.book_name = book_name;
         this.author = author;
         this.price = price;
     }
 
+    // Default constructor
     public BookStore() {
     }
 
