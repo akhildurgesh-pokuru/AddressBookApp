@@ -1,16 +1,21 @@
 package Address.AddressBook.Model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 @Entity
 public class BookStore {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    @Column(name = "book_name")
     String book_name;
 
+    @Column(name = "author")
     String author;
 
+    @Column(name = "price")
     double price;
 
     public BookStore(Long id, String book_name, String author, double price) {
